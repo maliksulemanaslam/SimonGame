@@ -66,19 +66,7 @@ function animatePress(currentColor) {
 
 }
 
-function mainScreen(){
-  $(document).on("keypress touchstart", function() {
 
-    if (!gameStarted) {
-
-      $("#level-title").text("Level " + level);
-
-      nextSequence();
-
-      gameStarted = true;
-    }
-  });
-}
 
 
 function checkAnswer(currentLevel) {
@@ -131,7 +119,17 @@ $(".ok").on("click touchstart", function() {
 
 
 $(".play").on("click touchstart", function() {
+  $(document).on("keypress touchstart", function() {
 
+    if (!gameStarted) {
+
+      $("#level-title").text("Level " + level);
+
+      nextSequence();
+
+      gameStarted = true;
+    }
+  });
   $(".play").fadeOut();
 
   setTimeout(function() {
@@ -139,7 +137,6 @@ $(".play").on("click touchstart", function() {
   }, 300);
   setTimeout(function() {
       $(".game-screen, #level-title").fadeIn();
-      mainScreen();
   }, 300);
 
 });
