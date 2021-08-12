@@ -30,7 +30,7 @@ function nextSequence() {
 
 }
 
-$(".btn").on("click touchstart", function() {
+$(".btn").on("click tap", function() {
 
   if (gameStarted) {
     var userChosenColour = this.id;
@@ -108,7 +108,7 @@ function startOver() {
 
 }
 
-$(".ok").on("click touchstart", function() {
+$(".ok").on("click tap", function() {
   $(".ok").fadeOut();
   setTimeout(function() {
 
@@ -118,8 +118,8 @@ $(".ok").on("click touchstart", function() {
 });
 
 
-$(".play").on("click touchstart", function() {
-  $(document).on("keypress touchstart", function() {
+$(".play").on("click tap", function() {
+  $(document).on("keypress tap", function() {
 
     if (!gameStarted) {
 
