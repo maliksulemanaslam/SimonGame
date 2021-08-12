@@ -30,7 +30,7 @@ function nextSequence() {
 
 }
 
-$(".btn").on("click tap", function() {
+$(".btn").on("click touchend", function() {
 
   if (gameStarted) {
     var userChosenColour = this.id;
@@ -51,7 +51,7 @@ function playSound(name) {
 
   var audio = new Audio('sounds/' + name + '.mp3');
 
-  audio.play();
+  audio.play(ouchend
 }
 
 function animatePress(currentColor) {
@@ -108,7 +108,7 @@ function startOver() {
 
 }
 
-$(".ok").on("click tap", function() {
+$(".ok").on("click touchend", function() {
   $(".ok").fadeOut();
   setTimeout(function() {
 
@@ -118,8 +118,8 @@ $(".ok").on("click tap", function() {
 });
 
 
-$(".play").on("click tap", function() {
-  $(document).on("keypress tap", function() {
+$(".play").on("click touchend", function() {
+  $(document).on("keypress touchend", function() {
 
     if (!gameStarted) {
 
