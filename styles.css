@@ -10,7 +10,7 @@ body {
   color: #FEF2BF;
 }
 
-.container {
+.game-screen {
   display: block;
   width: 50%;
   margin: auto;
@@ -55,7 +55,7 @@ body {
 #instructions{
   font-family: 'Press Start 2P', cursive;
   font-size: 2.5rem;
-  padding: 50px;
+  padding: 30px;
   color: #FEF2BF;
 }
 
@@ -70,6 +70,16 @@ body {
   text-align: center;
   width:400px;
   margin: auto;
+}
+.ok,.play{
+  width: 100px;
+  height: 50px;
+  border: 0;
+  border-radius: 2%;
+  margin: 3px;
+  padding-bottom: 10px;
+  position: relative;
+  bottom: 30px;
 }
 
 /* @media (max-width: 700px) {

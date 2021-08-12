@@ -117,4 +117,27 @@ function startOver() {
 
 }
 
-$(".game-screen, #level-title").hide();
+$(".ok").on("click touchstart", function() {
+  $(".ok").fadeOut();
+  setTimeout(function() {
+
+    $(".play").fadeIn();
+
+  }, 500);
+});
+
+
+$(".play").on("click touchstart", function() {
+
+  $(".play").fadeOut();
+
+  setTimeout(function() {
+    $(".ok, .instructions").slideUp();
+  }, 300);
+  setTimeout(function() {
+      $(".game-screen, #level-title").fadeIn();
+  }, 300);
+
+});
+
+$(".game-screen, #level-title , .play").hide();
