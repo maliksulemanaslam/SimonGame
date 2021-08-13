@@ -1,3 +1,5 @@
+$(".game-screen, #level-title , .play").hide();
+
 var gameStarted = false;
 
 var level = 0;
@@ -30,7 +32,7 @@ function nextSequence() {
 
 }
 
-$(".btn").on("click touchend", function() {
+$(".btn").on("click", function() {
 
   if (gameStarted) {
     var userChosenColour = this.id;
@@ -51,7 +53,7 @@ function playSound(name) {
 
   var audio = new Audio('sounds/' + name + '.mp3');
 
-  audio.play(ouchend
+  audio.play();
 }
 
 function animatePress(currentColor) {
@@ -108,7 +110,7 @@ function startOver() {
 
 }
 
-$(".ok").on("click touchend", function() {
+$(".ok").on("click", function() {
   $(".ok").fadeOut();
   setTimeout(function() {
 
@@ -118,8 +120,16 @@ $(".ok").on("click touchend", function() {
 });
 
 
-$(".play").on("click touchend", function() {
-  $(document).on("keypress touchend", function() {
+$(".play").on("click", function() {
+  $(".play").fadeOut();
+  setTimeout(function() {
+    $(".ok, .instructions").slideUp();
+  }, 300);
+  setTimeout(function() {
+      $(".game-screen, #level-title").fadeIn();
+  }, 300);
+
+  $(document).on("keypress", function() {
 
     if (!gameStarted) {
 
@@ -130,15 +140,4 @@ $(".play").on("click touchend", function() {
       gameStarted = true;
     }
   });
-  $(".play").fadeOut();
-
-  setTimeout(function() {
-    $(".ok, .instructions").slideUp();
-  }, 300);
-  setTimeout(function() {
-      $(".game-screen, #level-title").fadeIn();
-  }, 300);
-
 });
-
-$(".game-screen, #level-title , .play").hide();
