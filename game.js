@@ -141,3 +141,20 @@ $(".play").on("click", function() {
     }
   });
 });
+
+var mobile = window.matchMedia( "(max-width: 500px)" );
+
+if(mobile.matches){
+  $(document).on("click", function() {
+
+    if (!gameStarted) {
+
+      $("#level-title").text("Level " + level);
+
+      nextSequence();
+
+      gameStarted = true;
+    }
+  });
+}
+
